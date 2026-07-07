@@ -1,0 +1,30 @@
+{
+  "name": "@supportsphere/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node dist/server.js",
+    "lint": "eslint src --ext .ts",
+    "test": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "@supportsphere/config": "workspace:*",
+    "@supportsphere/shared": "workspace:*",
+    "@supportsphere/types": "workspace:*",
+    "express": "^4.21.0",
+    "helmet": "^8.0.0",
+    "pino": "^9.0.0",
+    "pino-http": "^10.0.0",
+    "zod": "^3.21.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.3.0"
+  }
+}

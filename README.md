@@ -78,19 +78,19 @@ Planned backend capabilities:
 
 ## Technology Stack
 
-| Area | Technology | Reason |
-|---|---|---|
-| Runtime | Node.js | Mature JavaScript runtime for backend APIs. |
-| Framework | Express.js | Minimal, widely understood, interview-friendly HTTP framework. |
-| Database | MongoDB Atlas | Flexible document model for SaaS entities and tenant-scoped data. |
-| Cache | Redis / Upstash Redis | Caching, rate limiting support, and BullMQ backing store. |
-| Queue | BullMQ | Reliable background jobs using Redis. |
-| Auth | JWT + Refresh Tokens | Stateless access tokens with controlled session renewal. |
-| Password Security | bcrypt | Standard adaptive password hashing. |
-| API Docs | Swagger / OpenAPI | Contract-first API visibility and testing support. |
-| Testing | Jest + Supertest | Unit and API integration testing. |
-| Deployment | Docker, Docker Compose, Nginx, Render | Practical deployment flow for portfolio and free-tier hosting. |
-| CI/CD | GitHub Actions | Automated linting, tests, and deployment checks. |
+| Area              | Technology                            | Reason                                                            |
+| ----------------- | ------------------------------------- | ----------------------------------------------------------------- |
+| Runtime           | Node.js                               | Mature JavaScript runtime for backend APIs.                       |
+| Framework         | Express.js                            | Minimal, widely understood, interview-friendly HTTP framework.    |
+| Database          | MongoDB Atlas                         | Flexible document model for SaaS entities and tenant-scoped data. |
+| Cache             | Redis / Upstash Redis                 | Caching, rate limiting support, and BullMQ backing store.         |
+| Queue             | BullMQ                                | Reliable background jobs using Redis.                             |
+| Auth              | JWT + Refresh Tokens                  | Stateless access tokens with controlled session renewal.          |
+| Password Security | bcrypt                                | Standard adaptive password hashing.                               |
+| API Docs          | Swagger / OpenAPI                     | Contract-first API visibility and testing support.                |
+| Testing           | Jest + Supertest                      | Unit and API integration testing.                                 |
+| Deployment        | Docker, Docker Compose, Nginx, Render | Practical deployment flow for portfolio and free-tier hosting.    |
+| CI/CD             | GitHub Actions                        | Automated linting, tests, and deployment checks.                  |
 
 ## Project Structure
 
@@ -146,44 +146,34 @@ This order prevents technical design from outrunning business rules.
 
 ## Documentation Index
 
-| Document | Status | Purpose |
-|---|---:|---|
-| [00-glossary.md](docs/00-glossary.md) | Draft | Defines official terminology and naming rules. |
-| [01-project-vision.md](docs/01-project-vision.md) | Draft | Defines the product vision, target user, project boundaries, and success criteria. |
-| [02-functional-requirements.md](docs/02-functional-requirements.md) | Draft | Defines concrete business capabilities and user workflows. |
-| [03-non-functional-requirements.md](docs/03-non-functional-requirements.md) | Draft | Defines quality attributes: security, performance, reliability, maintainability, and observability. |
-| [04-domain-model.md](docs/04-domain-model.md) | Draft | Defines business domains, aggregates, entities, value objects, ownership rules, invariants, lifecycles, and domain events. |
-| [05-system-architecture.md](docs/05-system-architecture.md) | Draft | Describes the high-level backend architecture and request lifecycle. |
-| [06-module-architecture.md](docs/06-module-architecture.md) | Draft | Breaks the system into domain modules and responsibilities. |
-| [07-folder-structure.md](docs/07-folder-structure.md) | Draft | Defines the future source-code organization. |
-| [08-database-design.md](docs/08-database-design.md) | Draft | Documents collections, relationships, validation, indexes, TTLs, and aggregation opportunities. |
-| [09-api-specification.md](docs/09-api-specification.md) | Draft | Defines endpoints, request bodies, responses, validation, auth, and errors. |
-| [10-authentication-design.md](docs/10-authentication-design.md) | Draft | Defines JWT, refresh tokens, password hashing, sessions, and cookie strategy. |
-| [11-rbac-design.md](docs/11-rbac-design.md) | Draft | Defines roles, permissions, enforcement points, and authorization risks. |
-| [12-multi-tenancy-design.md](docs/12-multi-tenancy-design.md) | Draft | Defines tenant isolation model, tenant resolution, and data access rules. |
-| [13-background-jobs.md](docs/13-background-jobs.md) | Draft | Defines BullMQ queues, workers, retries, idempotency, and job observability. |
-| [14-caching-strategy.md](docs/14-caching-strategy.md) | Draft | Defines Redis usage, cache keys, invalidation, TTLs, and failure behavior. |
-| [15-logging-monitoring.md](docs/15-logging-monitoring.md) | Draft | Defines structured logging, health checks, metrics, and operational visibility. |
-| [16-error-handling.md](docs/16-error-handling.md) | Draft | Defines error taxonomy, response shape, status mapping, and observability expectations. |
-| [17-security-design.md](docs/17-security-design.md) | Draft | Defines authentication, authorization, tenant isolation, secrets, and secure-by-default controls. |
-| [18-testing-strategy.md](docs/18-testing-strategy.md) | Draft | Defines unit, integration, end-to-end, and quality-gate expectations for production readiness. |
-| [19-infrastructure-deployment.md](docs/19-infrastructure-deployment.md) | Draft | Defines deployment topology, environments, runtime architecture, scaling, and release workflow. |
-| [20-performance-scalability.md](docs/20-performance-scalability.md) | Draft | Defines performance goals, scalability approach, caching, throughput, and monitoring priorities. |
-| [21-operational-runbooks.md](docs/21-operational-runbooks.md) | Draft | Defines incident response, health checks, rollback, escalation, and service operations expectations. |
-| [22-architecture-decision-records.md](docs/22-architecture-decision-records.md) | Draft | Defines how architectural choices and trade-offs are recorded over time. |
-| [23-roadmap-and-future-state.md](docs/23-roadmap-and-future-state.md) | Draft | Defines near-term, medium-term, and long-term platform evolution priorities. |
-| [24-interview-prep-and-resume-alignment.md](docs/24-interview-prep-and-resume-alignment.md) | Draft | Connects the architecture work to interview framing, resume language, and senior-level storytelling. |
-| [25-project-summary-and-execution-plan.md](docs/25-project-summary-and-execution-plan.md) | Draft | Provides the executive summary and a practical plan for extending the project. |
-| [16-error-handling.md](docs/16-error-handling.md) | Pending | Defines error taxonomy, API response format, and centralized handling. |
-| [17-security.md](docs/17-security.md) | Pending | Defines security controls across auth, input validation, CORS, Helmet, secrets, and rate limiting. |
-| [18-testing-strategy.md](docs/18-testing-strategy.md) | Pending | Defines test pyramid, tooling, fixtures, and critical test scenarios. |
-| [19-infrastructure.md](docs/19-infrastructure.md) | Pending | Defines Docker, environment configuration, services, and local infrastructure. |
-| [20-deployment.md](docs/20-deployment.md) | Pending | Defines deployment flow for Render, MongoDB Atlas, Upstash Redis, Nginx, and GitHub Actions. |
-| [21-performance.md](docs/21-performance.md) | Pending | Defines indexing, pagination, compression, load testing, and honest metric measurement. |
-| [22-architecture-decisions.md](docs/22-architecture-decisions.md) | Pending | Records major ADRs and trade-offs. |
-| [23-development-roadmap.md](docs/23-development-roadmap.md) | Pending | Defines phased implementation order. |
-| [24-resume-feature-mapping.md](docs/24-resume-feature-mapping.md) | Pending | Maps implemented features to truthful resume bullets and measurable evidence. |
-| [25-interview-preparation.md](docs/25-interview-preparation.md) | Pending | Prepares technical explanations, trade-offs, and interview defense points. |
+| Document                                                                                    | Status | Purpose                                                                                                                    |
+| ------------------------------------------------------------------------------------------- | -----: | -------------------------------------------------------------------------------------------------------------------------- |
+| [00-glossary.md](docs/00-glossary.md)                                                       |  Draft | Defines official terminology and naming rules.                                                                             |
+| [01-project-vision.md](docs/01-project-vision.md)                                           |  Draft | Defines the product vision, target user, project boundaries, and success criteria.                                         |
+| [02-functional-requirements.md](docs/02-functional-requirements.md)                         |  Draft | Defines concrete business capabilities and user workflows.                                                                 |
+| [03-non-functional-requirements.md](docs/03-non-functional-requirements.md)                 |  Draft | Defines quality attributes: security, performance, reliability, maintainability, and observability.                        |
+| [04-domain-model.md](docs/04-domain-model.md)                                               |  Draft | Defines business domains, aggregates, entities, value objects, ownership rules, invariants, lifecycles, and domain events. |
+| [05-system-architecture.md](docs/05-system-architecture.md)                                 |  Draft | Describes the high-level backend architecture and request lifecycle.                                                       |
+| [06-module-architecture.md](docs/06-module-architecture.md)                                 |  Draft | Breaks the system into domain modules and responsibilities.                                                                |
+| [07-folder-structure.md](docs/07-folder-structure.md)                                       |  Draft | Defines the future source-code organization.                                                                               |
+| [08-database-design.md](docs/08-database-design.md)                                         |  Draft | Documents collections, relationships, validation, indexes, TTLs, and aggregation opportunities.                            |
+| [09-api-specification.md](docs/09-api-specification.md)                                     |  Draft | Defines endpoints, request bodies, responses, validation, auth, and errors.                                                |
+| [10-authentication-design.md](docs/10-authentication-design.md)                             |  Draft | Defines JWT, refresh tokens, password hashing, sessions, and cookie strategy.                                              |
+| [11-rbac-design.md](docs/11-rbac-design.md)                                                 |  Draft | Defines roles, permissions, enforcement points, and authorization risks.                                                   |
+| [12-multi-tenancy-design.md](docs/12-multi-tenancy-design.md)                               |  Draft | Defines tenant isolation model, tenant resolution, and data access rules.                                                  |
+| [13-background-jobs.md](docs/13-background-jobs.md)                                         |  Draft | Defines BullMQ queues, workers, retries, idempotency, and job observability.                                               |
+| [14-caching-strategy.md](docs/14-caching-strategy.md)                                       |  Draft | Defines Redis usage, cache keys, invalidation, TTLs, and failure behavior.                                                 |
+| [15-logging-monitoring.md](docs/15-logging-monitoring.md)                                   |  Draft | Defines structured logging, health checks, metrics, and operational visibility.                                            |
+| [16-error-handling.md](docs/16-error-handling.md)                                           |  Draft | Defines error taxonomy, response shape, status mapping, and observability expectations.                                    |
+| [17-security-design.md](docs/17-security-design.md)                                         |  Draft | Defines authentication, authorization, tenant isolation, secrets, and secure-by-default controls.                          |
+| [18-testing-strategy.md](docs/18-testing-strategy.md)                                       |  Draft | Defines unit, integration, end-to-end, and quality-gate expectations for production readiness.                             |
+| [19-infrastructure-deployment.md](docs/19-infrastructure-deployment.md)                     |  Draft | Defines deployment topology, environments, runtime architecture, scaling, and release workflow.                            |
+| [20-performance-scalability.md](docs/20-performance-scalability.md)                         |  Draft | Defines performance goals, scalability approach, caching, throughput, and monitoring priorities.                           |
+| [21-operational-runbooks.md](docs/21-operational-runbooks.md)                               |  Draft | Defines incident response, health checks, rollback, escalation, and service operations expectations.                       |
+| [22-architecture-decision-records.md](docs/22-architecture-decision-records.md)             |  Draft | Defines how architectural choices and trade-offs are recorded over time.                                                   |
+| [23-roadmap-and-future-state.md](docs/23-roadmap-and-future-state.md)                       |  Draft | Defines near-term, medium-term, and long-term platform evolution priorities.                                               |
+| [24-interview-prep-and-resume-alignment.md](docs/24-interview-prep-and-resume-alignment.md) |  Draft | Connects the architecture work to interview framing, resume language, and senior-level storytelling.                       |
+| [25-project-summary-and-execution-plan.md](docs/25-project-summary-and-execution-plan.md)   |  Draft | Provides the executive summary and a practical plan for extending the project.                                             |
 
 ## Development Workflow
 
@@ -232,15 +222,15 @@ Production-readiness concerns to document before implementation:
 
 Planned phases:
 
-| Phase | Focus |
-|---|---|
-| Phase 1 | Terminology, requirements, domain model, architecture documentation, and review. |
-| Phase 2 | Project scaffolding, configuration, middleware, and database connection foundation. |
-| Phase 3 | Authentication, refresh token rotation, RBAC, and tenant context. |
-| Phase 4 | Organization, user, membership, team, ticket, comment, and attachment modules. |
-| Phase 5 | Notifications, audit logs, Redis caching, and BullMQ workers. |
+| Phase   | Focus                                                                                |
+| ------- | ------------------------------------------------------------------------------------ |
+| Phase 1 | Terminology, requirements, domain model, architecture documentation, and review.     |
+| Phase 2 | Project scaffolding, configuration, middleware, and database connection foundation.  |
+| Phase 3 | Authentication, refresh token rotation, RBAC, and tenant context.                    |
+| Phase 4 | Organization, user, membership, team, ticket, comment, and attachment modules.       |
+| Phase 5 | Notifications, audit logs, Redis caching, and BullMQ workers.                        |
 | Phase 6 | Swagger documentation, integration tests, performance tests, and security hardening. |
-| Phase 7 | Docker, CI/CD, deployment, monitoring, and resume evidence collection. |
+| Phase 7 | Docker, CI/CD, deployment, monitoring, and resume evidence collection.               |
 
 ## Design Constraints
 

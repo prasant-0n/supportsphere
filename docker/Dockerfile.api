@@ -1,0 +1,21 @@
+FROM node:22-alpine
+WORKDIR /app
+COPY package.json pnpm-workspace.yaml ./
+COPY apps/api/package.json ./apps/api/package.json
+COPY packages/config/package.json ./packages/config/package.json
+COPY packages/shared/package.json ./packages/shared/package.json
+COPY packages/types/package.json ./packages/types/package.json
+COPY tsconfig.base.json ./tsconfig.base.json
+COPY tsconfig.json ./tsconfig.json
+COPY apps/api/tsconfig.json ./apps/api/tsconfig.json
+COPY packages/config/tsconfig.json ./packages/config/tsconfig.json
+COPY packages/shared/tsconfig.json ./packages/shared/tsconfig.json
+COPY packages/types/tsconfig.json ./packages/types/tsconfig.json
+COPY apps/api/src ./apps/api/src
+COPY packages/config/src ./packages/config/src
+COPY packages/shared/src ./packages/shared/src
+COPY packages/types/src ./packages/types/src
+RUN corepack enable && pnpm install --ignore-scripts
+RUN pnpm --filter @supportsphere/api build
+EXPOSE 3000
+CMD ["node", "apps/api/dist/server.js"]
